@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from './RecipeList'
 import '../css/app.css'
-import uuidv4 from 'uuid/v4'
+// import uuidv4 from 'uuid/v4'
+// import { v4 as uuidv4 } from 'uuid';
+// import { uuid } from 'uuidv4';
+import { uuid } from 'uuidv4';
 import RecipeEdit from './RecipeEdit';
 
 export const RecipeContext = React.createContext()
@@ -34,13 +37,13 @@ function App() {
 
   function handleRecipeAdd() {
     const newRecipe = {
-      id: uuidv4(),
+      id: uuid(),
       name: '',
       servings: 1,
       cookTime: '',
       instructions: '',
       ingredients: [
-        { id: uuidv4(), name: '', amount: '' }
+        { id: uuid(), name: '', amount: '' }
       ]
     }
 

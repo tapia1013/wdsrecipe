@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import RecipeIngredientEdit from './RecipeIngredientEdit'
 import { RecipeContext } from './App'
-import uuidv4 from 'uuid/v4'
+import { uuid } from 'uuidv4';
 
 export default function RecipeEdit({ recipe }) {
   const { handleRecipeChange, handleRecipeSelect } = useContext(RecipeContext)
@@ -19,7 +19,7 @@ export default function RecipeEdit({ recipe }) {
 
   function handleIngredientAdd() {
     const newIngredient = {
-      id: uuidv4(),
+      id: uuid(),
       name: '',
       amount: ''
     }
@@ -90,7 +90,7 @@ export default function RecipeEdit({ recipe }) {
           className="recipe-edit__input"
           onChange={e => handleChange({ instructions: e.target.value })}
           value={recipe.instructions}
-          id="instructions" /> 
+          id="instructions" />
       </div>
       <br />
       <label className="recipe-edit__label">Ingredients</label>
